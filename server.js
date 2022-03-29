@@ -31,6 +31,25 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, ".public/index.html"));
 });
 
+function createNew(body, notesArr) {
+  const newNote = body;
+  if (!Array.isArray(notesArr)) notesArr = [];
+  if (notesArr.length === 0) notesArr.push(0);
+  body.id = notesArr[0];
+  notesArr[0]++;
+  notesArr.push(newNote);
+  fs.writeFileSync(
+    path.join(__dirname, "./db/db.json"),
+    JSON.stringify(notesArr, null, 2)
+  );
+  return newNote;
+}
+
+app.post("api/notes", (req, res) => {
+  const newNote = createNew(req.body, notes);
+  res.json(newNote);
+});
+
 app.listen(PORT, () => {
   console.log(`App listening at ${PORT} 🚀`);
 });
