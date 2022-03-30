@@ -1,7 +1,7 @@
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
-const notes = require("./db/db.json");
+const allNotes = require("./db/db.json");
 const PORT = process.env.PORT || 3001;
 
 const app = express();
@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 app.use("/api/notes", (req, res) => {
-  res.json(notes.slice(1));
+  res.json(allNotes.slice(1));
 });
 
 // GET Route for homepage
@@ -45,7 +45,7 @@ function createNew(body, notesArr) {
 }
 
 app.post("api/notes", (req, res) => {
-  const newNote = createNew(req.body, notes);
+  const newNote = createNew(req.body, allNotes);
   res.json(newNote);
 });
 
@@ -64,7 +64,7 @@ function deleteNote(id, notesArr) {
 }
 
 app.delete("/api/notes/:id", (req, res) => {
-  deleteNote(req.params.id, notes);
+  deleteNote(req.params.id, allNotes);
   res.json(true);
 });
 
