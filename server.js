@@ -1,7 +1,7 @@
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
-const allNotes = require("./db/db.json");
+const allNotes = require("/db/db.json");
 const PORT = process.env.PORT || 3001;
 
 const app = express();
@@ -17,17 +17,17 @@ app.use("/api/notes", (req, res) => {
 
 // GET Route for homepage
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "./public/index.html"));
+  res.sendFile(path.join(__dirname, "/public/index.html"));
 });
 
 // GET Route for notes page
 app.get("/notes", (req, res) => {
-  res.sendFile(path.join(__dirname, "./public/notes.html"));
+  res.sendFile(path.join(__dirname, "/public/notes.html"));
 });
 
 // Wildcard route to direct users to a 404 page
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./public/index.html"));
+  res.sendFile(path.join(__dirname, "/public/index.html"));
 });
 
 function createNew(body, notesArr) {
@@ -38,7 +38,7 @@ function createNew(body, notesArr) {
   notesArr[0]++;
   notesArr.push(newNote);
   fs.writeFileSync(
-    path.join(__dirname, "./db/db.json"),
+    path.join(__dirname, "/db/db.json"),
     JSON.stringify(notesArr, null, 2)
   );
   return newNote;
@@ -55,7 +55,7 @@ function deleteNote(id, notesArr) {
     if (note.id == id) {
       notesArr.splice(i, 1);
       fs.writeFileSync(
-        path.join(__dirname, "./db/db.json"),
+        path.join(__dirname, "/db/db.json"),
         JSON.stringify(notesArr, null, 2)
       );
       break;
