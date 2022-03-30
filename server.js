@@ -1,5 +1,4 @@
 const express = require("express");
-const res = require("express/lib/response");
 const fs = require("fs");
 const path = require("path");
 const notes = require("./db/db.json");
