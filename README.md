@@ -1,4 +1,4 @@
-# Doodly Note Organizer
+# Doodly Jotter Notes
 
 ## Overview
 
@@ -22,4 +22,5 @@ The following API routes are created:
 
 ## Resources
 
--
+- https://note-organizer1.herokuapp.com/
+- https://github.com/zionremnant/Doodly-Jotter-Notes
