@@ -22,7 +22,7 @@ The following API routes are created:
 
 <img width="992" alt="Screen Shot 2022-03-29 at 9 17 12 PM" src="https://user-images.githubusercontent.com/99617307/160750879-43a775ef-e37d-407b-86eb-084f45c3ba84.png">
 
-<iframe src="https://drive.google.com/file/d/1ucVwZTz21AeBJkmbiSkvdbdp9X_AqSWW/preview" width="640" height="480"></iframe>
+https://user-images.githubusercontent.com/99617307/160754201-45d87781-bc68-4feb-80b3-4b37b0b22554.mp4
 
 ## Resources
 
