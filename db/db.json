@@ -1,1 +1,17 @@
-[{ "title": "Welcome", "text": "Write yourself a note", "id": 1 }]
+[
+  null,
+  {
+    "title": "Taxes",
+    "text": "File taxes before April",
+    "id": {
+      "title": "Welcome",
+      "text": "Write yourself a note",
+      "id": 1
+    }
+  },
+  {
+    "title": "Cat",
+    "text": "pick up cat food\npick up cat litter",
+    "id": null
+  }
+]
